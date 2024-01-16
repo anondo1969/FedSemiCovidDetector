@@ -1,0 +1,35 @@
+
+globals = ["10"]#["5", "10"]
+locals = ["5"]#["5", "10"]
+rounds = ["1"]#["5", "10"]
+averages = ["simple", "std_dev", "weighted_metric"]
+metrics = ["loss", "accuracy"]
+
+exp_no = 0
+
+for round in rounds:
+    for global_epochs in globals:
+        for average in averages:
+            for metric in metrics:
+                
+                
+                print( "CUDA_VISIBLE_DEVICES=0 python3 run_clients_transfer.py covid_xray_transfer jsrt.mat CovidMix_fd_client_zeus_transfer.py 1 " +round+" "+global_epochs+" .6 .1 10 1 0 "+metric+" "+average+'&>> log_transfer_users_5_rounds_' +round+'_'+'local_epochs_' +global_epochs+'_'+metric+'_'+average+'.txt &')
+                
+                exp_no+=1
+                
+                print()
+                
+
+print(exp_no)
+                
+                
+                
+                
+                
+                
+                
+        
+
+
+
+
